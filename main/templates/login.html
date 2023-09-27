@@ -5,6 +5,16 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    .rounded-button {
+        border-radius: 10px; /* Adjust the radius as needed */
+        padding: 10px 20px; /* Adjust the padding as needed */
+        background-color: #3498db; /* Button background color */
+        color: #ffffff; /* Button text color */
+        border: none; /* Remove the button border */
+        cursor: pointer; /* Change the cursor to a pointer on hover */
+    }
+</style>
 
 <div class = "login">
 
@@ -25,7 +35,7 @@
 
             <tr>
                 <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td><input class="btn login_btn rounded-button" type="submit" value="Login"></td>
             </tr>
         </table>
     </form>
@@ -43,3 +53,4 @@
 </div>
 
 {% endblock content %}
+
