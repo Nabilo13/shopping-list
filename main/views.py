@@ -16,7 +16,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-
+#coba
 # Create your views here.
 @login_required(login_url='/login')
 def show_main(request):
