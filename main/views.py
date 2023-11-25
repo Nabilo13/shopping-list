@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse, HttpResponseNotFound
 from django.core import serializers
 from django.http import HttpResponseRedirect
@@ -15,8 +16,7 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-
-#coba
+from django.http import JsonResponse
 # Create your views here.
 @login_required(login_url='/login')
 def show_main(request):
@@ -59,6 +59,7 @@ def show_json_by_id(request, id):
     data = Product.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+@csrf_exempt
 def register(request):
     form = UserCreationForm()
 
@@ -71,6 +72,7 @@ def register(request):
     context = {'form':form}
     return render(request, 'register.html', context)
 
+@csrf_exempt
 def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
